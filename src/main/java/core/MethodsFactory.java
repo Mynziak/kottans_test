@@ -10,8 +10,21 @@ import java.util.concurrent.TimeUnit;
 /**
  * Created by Dima on 06.06.2016.
  */
-public class MethodsFactory extends StaticDriver {
+public abstract class MethodsFactory extends StaticDriver {
 
+    public abstract void isOpened();
+
+    public boolean waitUntilPageLoaded() {
+        int time = 60;
+        Logger.info("Waiting [" + time + "] sec until page is loaded");
+        try {
+            WebDriverWait wait = new WebDriverWait(driver, time, 50);
+            wait.until((ExpectedCondition<Boolean>) d -> ((JavascriptExecutor) d).executeScript("return document.readyState").equals("complete"));
+            return true;
+        } catch (TimeoutException e) {
+            return false;
+        }
+    }
 
     public void getUrl(String url) {
         Logger.info("Getting url [" + url + "]");

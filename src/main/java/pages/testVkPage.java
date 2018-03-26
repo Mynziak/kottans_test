@@ -1,4 +1,4 @@
-package tests;
+package pages;
 
 import core.MethodsFactory;
 import org.openqa.selenium.By;
@@ -22,5 +22,11 @@ public class testVkPage extends MethodsFactory {
     public boolean isOpenAccountInfoTab (){
         click(accountInfoTab);
         return isElementDisplayed(activeTab, 30);
+    }
+
+    @Override
+    public void isOpened() {
+        waitUntilPageLoaded();
+
     }
 }

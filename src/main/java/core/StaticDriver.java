@@ -11,7 +11,5 @@ import sun.rmi.runtime.Log;
 public class StaticDriver {
     protected static WebDriver myDriver;
     public static EventFiringWebDriver driver;
-
-    protected static String mwh; //Main Window handle
     public static Browser browser;
 }

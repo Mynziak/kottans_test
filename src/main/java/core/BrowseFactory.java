@@ -23,6 +23,7 @@ public class BrowseFactory extends MethodsFactory {
     public void setupBrowser(@Optional("CH") String browser) {
 
         if (browser.equalsIgnoreCase("FF")) {
+            //TODO: set path to ffdriver
             myDriver = new FirefoxDriver();
         } else if (browser.equalsIgnoreCase("CH")) {
             System.setProperty("webdriver.chrome.driver", PATH_TO_WIN_CHROME_DRIVER);
@@ -40,5 +41,10 @@ public class BrowseFactory extends MethodsFactory {
     public void tearDown() {
         driver.close();
         driver.quit();
+    }
+
+    @Override
+    public void isOpened() {
+
     }
 }
