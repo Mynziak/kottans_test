@@ -1,0 +1,10 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Kottans Smoke Tests" verbose="1">
+    <test name="Kottans Tests">
+        <classes>
+            <class name="tests.KottansTest">
+            </class>
+        </classes>
+    </test>
+</suite>

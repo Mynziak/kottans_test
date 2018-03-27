@@ -3,10 +3,9 @@ package core;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Optional;
-import org.testng.annotations.Parameters;
+import org.testng.ITestContext;
+import org.testng.annotations.*;
+import utils.Logger;
 
 import java.io.File;
 import java.util.concurrent.TimeUnit;
@@ -20,14 +19,15 @@ public class BrowseFactory extends MethodsFactory {
 
     @BeforeTest
     @Parameters({"browser"})
-    public void setupBrowser(@Optional("CH") String browser) {
-
+    protected void beforeTest(@Optional("CH") String browser) {
         if (browser.equalsIgnoreCase("FF")) {
             //TODO: set path to ffdriver
             myDriver = new FirefoxDriver();
         } else if (browser.equalsIgnoreCase("CH")) {
             System.setProperty("webdriver.chrome.driver", PATH_TO_WIN_CHROME_DRIVER);
             myDriver = new ChromeDriver();
+        } else {
+            Logger.info("Start without driver.");
         }
         driver = new EventFiringWebDriver(myDriver);
         driver.register(new DriverListener());
@@ -38,13 +38,12 @@ public class BrowseFactory extends MethodsFactory {
     }
 
     @AfterTest
-    public void tearDown() {
+    protected void tearDown() {
         driver.close();
         driver.quit();
     }
 
     @Override
     public void isOpened() {
-
     }
 }

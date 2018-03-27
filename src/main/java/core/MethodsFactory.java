@@ -12,7 +12,7 @@ import java.util.concurrent.TimeUnit;
  */
 public abstract class MethodsFactory extends StaticDriver {
 
-    public abstract void isOpened();
+    public abstract void isOpened(); // implement this method in each page
 
     public boolean waitUntilPageLoaded() {
         int time = 60;
@@ -77,29 +77,4 @@ public abstract class MethodsFactory extends StaticDriver {
             e.printStackTrace();
         }
     }
-
-
-    protected boolean isElementDisplayed(final By locator, int sec) {
-        WebDriverWait wait = new WebDriverWait(driver, sec);
-        wait.until(new ExpectedCondition<Boolean>() {
-            @Override
-            public Boolean apply(WebDriver d) {
-                try {
-                    List<WebElement> list = driver.findElements(locator);
-                    if (list.size() == 0) {
-                        Logger.error("Element is NOT present: " + locator);
-                        return false;
-                    } else {
-                        Logger.info("Element is present on Page: " + locator);
-                        return list.get(0).isDisplayed();
-                    }
-                } catch (StaleElementReferenceException e) {                      // try again
-                    return false;
-                }
-
-            }
-        });
-        return true;
-    }
-
 }

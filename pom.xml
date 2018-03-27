@@ -16,7 +16,7 @@
                 <version>2.18.1</version>
                 <configuration>
                     <suiteXmlFiles>
-                        <suiteXmlFile>${suite}</suiteXmlFile>  //  имя xml где все тесты
+                        <suiteXmlFile>${suite}</suiteXmlFile>
                     </suiteXmlFiles>
                 </configuration>
             </plugin>
@@ -38,28 +38,11 @@
             <artifactId>selenium-java</artifactId>
             <version>2.46.0</version>
         </dependency>
+
         <dependency>
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
             <version>6.9.4</version>
-        </dependency>
-        <dependency>
-            <groupId>javax.mail</groupId>
-            <artifactId>mail</artifactId>
-            <version>1.5.0-b01</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.apache.httpcomponents</groupId>
-            <artifactId>fluent-hc</artifactId>
-            <version>4.5.1</version>
-        </dependency>
-
-        <!-- jackson -->
-        <dependency>
-            <groupId>org.codehaus.jackson</groupId>
-            <artifactId>jackson-mapper-asl</artifactId>
-            <version>1.9.13</version>
         </dependency>
 
         <dependency>
@@ -67,17 +50,6 @@
             <artifactId>log4j</artifactId>
             <version>1.2.17</version>
         </dependency>
-        <dependency>
-            <groupId>javax.mail</groupId>
-            <artifactId>javax.mail-api</artifactId>
-            <version>1.5.2</version>
-        </dependency>
-
-        <dependency>
-            <groupId>com.sun.mail</groupId>
-            <artifactId>javax.mail</artifactId>
-            <version>1.5.2</version>
-        </dependency>
 
         <dependency>
             <groupId>org.apache.httpcomponents</groupId>
@@ -85,36 +57,6 @@
             <version>4.5.1</version>
         </dependency>
 
-        <!-- jackson -->
-        <dependency>
-            <groupId>org.codehaus.jackson</groupId>
-            <artifactId>jackson-mapper-asl</artifactId>
-            <version>1.9.13</version>
-        </dependency>
-
-
-        <dependency>
-            <groupId>org.json</groupId>
-            <artifactId>json</artifactId>
-            <version>20141113</version>
-        </dependency>
-        <!-- jackson -->
-        <dependency>
-            <groupId>org.codehaus.jackson</groupId>
-            <artifactId>jackson-mapper-asl</artifactId>
-            <version>1.9.13</version>
-        </dependency>
-        <!-- Jsoup (text parser) -->
-        <dependency>
-            <groupId>org.jsoup</groupId>
-            <artifactId>jsoup</artifactId>
-            <version>1.8.1</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.httpcomponents</groupId>
-            <artifactId>fluent-hc</artifactId>
-            <version>4.5.1</version>
-        </dependency>
         <dependency>
             <groupId>org.json</groupId>
             <artifactId>json</artifactId>
